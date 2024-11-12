@@ -44,6 +44,7 @@ export const login = async (req, res) => {
       return res.status(400).json({ error: "Invalid user credential" });
     }
     createTokenAndSaveCookie(user._id, res);
+
     res.status(201).json({
       message: "User logged in successfully",
       user: {
